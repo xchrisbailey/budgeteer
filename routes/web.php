@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EntryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,20 +24,21 @@ Route::get('/dashboard', function () {
     ->middleware(['auth'])
     ->name('dashboard');
 
+// Entry Routes
 Route::group(['middleware' => 'auth', 'prefix' => 'entry'], function () {
-    // view single entry
-    Route::get('create', [EntryController::class, 'show'])->name('entry.show');
-
-    // create entry
+    // Create Entry
     Route::get('create', [EntryController::class, 'create'])->name('entry.create');
-    Route::post('entry', [EntryController::class, 'store'])->name('entry.store');
+    Route::post('/', [EntryController::class, 'store'])->name('entry.store');
 
-    // edit entry
+    // Update Entry
     Route::get('{entry}/edit', [EntryController::class, 'edit'])->name('entry.edit');
     Route::put('{entry}', [EntryController::class, 'update'])->name('entry.update');
 
-    // delete entry
-    Route::delete('{entry}', [EntryController::class, 'destroy'])->name('entry.destroy');
+    // View Single Entry
+    Route::get('{entry}', [EntryController::class, 'show'])->name('entry.show');
+
+    // Delete Entry
+    Route::delete('{entry}', [EntryController::class, 'destroy'])->name('entry.delete');
 });
 
 require __DIR__ . '/auth.php';

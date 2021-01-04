@@ -22,10 +22,10 @@ class userFeed extends Component {
      */
     public function render() {
         $entries = DB::table('entries')
-            ->where('user_id', '=', current_user())
+            ->where('user_id', '=', current_user()->id)
             ->orderBy('created_at', 'DESC')
             ->get();
 
-        return view('components.user_feed', ['entries' => $entries]);
+        return view('components.user-feed', ['entries' => $entries]);
     }
 }

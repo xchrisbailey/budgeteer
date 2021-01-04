@@ -11,7 +11,7 @@ if (!function_exists('cents_to_dollars')) {
 
 if (!function_exists('dollars_to_cents')) {
     function dollars_to_cents($dollars) {
-        return (int) ((float) preg_replace('/[^0-9.]', '', $dollars) * 100);
+        return (int) ((float) preg_replace('/[^0-9.]/', '', $dollars) * 100);
     }
 }
 

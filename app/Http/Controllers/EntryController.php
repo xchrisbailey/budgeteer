@@ -39,7 +39,7 @@ class EntryController extends Controller {
 
     protected function validateAndPrepareEntry() {
         $entry = request()->validate([
-            'amount' => 'required|numberic|gt:0',
+            'amount' => 'required|numeric|gt:0',
             'description' => 'required',
             'category' => 'required',
         ]);
