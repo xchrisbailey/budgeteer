@@ -19,6 +19,24 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})
+    ->middleware(['auth'])
+    ->name('dashboard');
 
-require __DIR__.'/auth.php';
+Route::group(['middleware' => 'auth', 'prefix' => 'entry'], function () {
+    // view single entry
+    Route::get('create', [EntryController::class, 'show'])->name('entry.show');
+
+    // create entry
+    Route::get('create', [EntryController::class, 'create'])->name('entry.create');
+    Route::post('entry', [EntryController::class, 'store'])->name('entry.store');
+
+    // edit entry
+    Route::get('{entry}/edit', [EntryController::class, 'edit'])->name('entry.edit');
+    Route::put('{entry}', [EntryController::class, 'update'])->name('entry.update');
+
+    // delete entry
+    Route::delete('{entry}', [EntryController::class, 'destroy'])->name('entry.destroy');
+});
+
+require __DIR__ . '/auth.php';
