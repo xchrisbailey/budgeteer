@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class EntryController extends Controller {
     public function show(Entry $entry) {
+        $this->authorize('show', $entry);
         return view('entry.show', ['entry' => $entry]);
     }
 
@@ -23,16 +24,19 @@ class EntryController extends Controller {
     }
 
     public function edit(Entry $entry) {
+        $this->authorize('edit', $entry);
         return view('entry.edit', ['entry' => $entry]);
     }
 
     public function update(Entry $entry, Request $request) {
+        $this->authorize('update', $entry);
         $entry->update($this->validateAndPrepareEntry());
         $request->session()->flash('message', 'Entry Updated');
         return redirect('/dashboard');
     }
 
     public function destroy(Entry $entry) {
+        $this->authorize('delete', $entry);
         $entry->delete();
         return redirect()->back();
     }
