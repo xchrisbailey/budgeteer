@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Entry;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class EntryController extends Controller {
     public function show(Entry $entry) {
-        $this->authorize('show', $entry);
+        if (!Gate::allows('edit', $entry)) {
+            return redirect('/dashboard')->withErrors(['You are not authorized to view this entry']);
+        }
         return view('entry.show', ['entry' => $entry]);
     }
 
@@ -24,7 +27,10 @@ class EntryController extends Controller {
     }
 
     public function edit(Entry $entry) {
-        $this->authorize('edit', $entry);
+        if (!Gate::allows('edit', $entry)) {
+            return redirect('/dashboard')->withErrors(['You are not authorized to edit this entry']);
+        }
+
         return view('entry.edit', ['entry' => $entry]);
     }
 

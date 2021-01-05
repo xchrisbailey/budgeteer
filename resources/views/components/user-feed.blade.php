@@ -2,6 +2,12 @@
   <div>{{ session('message') }}</div>
 @endif
 
+@if ($errors->any())
+  <div>
+    {{ $errors->first() }}
+  </div>
+@endif
+
 <div>
   @forelse ($entries as $entry)
     <div>
