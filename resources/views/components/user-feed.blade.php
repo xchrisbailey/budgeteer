@@ -44,7 +44,7 @@
                     <td class="px-4 py-3 uppercase">{{ $entry->category }}</td>
                     <td class="px-4 py-3 text-right">
                         <a href="{{ route('entry.edit', $entry->id) }}"
-                            class="inline-flex p-2 transition duration-200 ease-in-out bg-yellow-300 rounded shadow hover:bg-yellow-400">
+                            class="inline-flex p-2 mr-2 transition duration-200 ease-in-out bg-yellow-300 rounded-full shadow hover:bg-yellow-400">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 p-0 m-0" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -55,7 +55,7 @@
                             @csrf
                             @method("DELETE")
                             <button
-                                class="p-2 transition duration-200 ease-in-out bg-red-300 rounded shadow hover:bg-red-400">
+                                class="p-2 transition duration-200 ease-in-out bg-red-300 rounded-full shadow hover:bg-red-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
                                     stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
