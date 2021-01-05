@@ -1,132 +1,120 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Budgeteer</title>
 
-        <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\:text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}}
-        </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&display=swap" rel="stylesheet">
 
-        <style>
-            body {
-                font-family: 'Nunito';
-            }
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+</head>
+
+<body class="antialiased bg-gray-200">
+    <div class="flex items-center justify-center w-screen h-screen column">
+        <div class="flex flex-col justify-between w-full p-3 mx-2 bg-white rounded-lg shadow-md md:w-1/3">
+            <div class="mb-3 text-center">
+                <h1 class="text-lg font-semibold text-gray-800 uppercase">budgeteer</h1>
+            </div>
+            <div class="block w-full h-auto mb-3">
+                <svg id="e4744e0b-ee3a-4289-b7cd-f5efd80fd01c" class="w-full h-auto" data-name="Layer 1"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 825.80315 467">
+                    <polygon points="155.06 453.964 142.8 453.964 140.968 406.676 155.062 406.677 155.06 453.964"
+                        fill="#ffb8b8" />
+                    <path
+                        d="M345.28458,682.34851l-39.53052-.00146v-.5a15.38605,15.38605,0,0,1,15.38647-15.38623h.001l24.1438.001Z"
+                        transform="translate(-187.09843 -216.5)" fill="#2f2e41" />
+                    <polygon points="224.114 453.964 236.373 453.964 238.206 406.676 224.111 406.677 224.114 453.964"
+                        fill="#ffb8b8" />
+                    <path
+                        d="M408.08477,666.4618l24.1438-.001h.001A15.38605,15.38605,0,0,1,447.616,681.84705v.5l-39.53052.00146Z"
+                        transform="translate(-187.09843 -216.5)" fill="#2f2e41" />
+                    <path
+                        d="M411.53392,664.40386a4.52007,4.52007,0,0,1-4.39405-3.52246L376.7534,528.34234a1.45736,1.45736,0,0,0-1.46411-1.17383h-.00757a1.45833,1.45833,0,0,0-1.46021,1.18847L345.917,660.00249a4.52164,4.52164,0,0,1-4.40234,3.56641H328.2219a4.50015,4.50015,0,0,1-4.49218-4.76563L333.6306,491.9478l3.98413-1.17871.0747.001,78.25806.68457L432.615,658.12652a4.49788,4.49788,0,0,1-4.11645,4.92187l-16.604,1.34082Q411.71324,664.40387,411.53392,664.40386Z"
+                        transform="translate(-187.09843 -216.5)" fill="#2f2e41" />
+                    <circle cx="192.11811" cy="96.97873" r="24.56103" fill="#a0616a" />
+                    <path
+                        d="M364.17039,510.24175a42.39306,42.39306,0,0,1-12.72754-1.791,28.09705,28.09705,0,0,1-17.03808-14.375,4.50537,4.50537,0,0,1-.335-3.35449c2.70875-9.24511,15.79859-57.30078,7.44678-95.50293a40.48485,40.48485,0,0,1,5.75513-31.11426,39.97673,39.97673,0,0,1,25.927-17.43847l.00025-.001c1.38525-.27051,2.77807-.49219,4.13916-.66015a39.83565,39.83565,0,0,1,32.25781,10.61328,40.82033,40.82033,0,0,1,12.81567,32.36035L415.99266,491.982a4.46,4.46,0,0,1-2.39795,3.70313C406.20213,499.55913,383.9951,510.24175,364.17039,510.24175Z"
+                        transform="translate(-187.09843 -216.5)" fill="#ccc" />
+                    <path
+                        d="M339.80433,493.32855a10.74272,10.74272,0,0,0,3.84155-16.01843l8.033-78.54005H334.31878l-6.384,76.69032a10.80091,10.80091,0,0,0,11.86954,17.86816Z"
+                        transform="translate(-187.09843 -216.5)" fill="#a0616a" />
+                    <path
+                        d="M352.90684,361.58805h0a14.22883,14.22883,0,0,1,11.391,14.94173l-2.39258,34.243a4,4,0,0,1-5.16111,3.546l-28.82426-8.82365a4,4,0,0,1-2.56243-5.261l11.46611-29.805A14.22883,14.22883,0,0,1,352.90684,361.58805Z"
+                        transform="translate(-187.09843 -216.5)" fill="#ccc" />
+                    <path
+                        d="M406.963,295.39956a30.15571,30.15571,0,0,0-33.0527-18.58366l7.744,6.2578c-9.62157.324-19.74953-.36492-26.61937,6.37932,2.18707-.06067,5.05354,4.61732,7.24061,4.55664-4.08894.08088-7.79672,2.95388-9.60281,6.62321a18.86531,18.86531,0,0,0-1.114,11.99709c.8076,4.00921,6.96814,13.40165,8.62634,17.14011-.28516-9.77014,18.94922-33.0744,28.3418-30.64233a25.7722,25.7722,0,0,0-11.90045,9.03527,34.9042,34.9042,0,0,1,20.70091-3.38707,14.65,14.65,0,0,0,4.935.27623,6.02513,6.02513,0,0,0,3.57207-9.62851Z"
+                        transform="translate(-187.09843 -216.5)" fill="#2f2e41" />
+                    <path d="M569.09843,683.5h-381a1,1,0,0,1,0-2h381a1,1,0,0,1,0,2Z"
+                        transform="translate(-187.09843 -216.5)" fill="#3f3d56" />
+                    <rect x="812.80315" y="29" width="6" height="1" fill="#e6e6e6" />
+                    <path
+                        d="M987.78048,246.5H975.65939v-1h12.12109Zm-24.24243,0H951.417v-1h12.12109Zm-24.24243,0h-12.1211v-1h12.1211Zm-24.24243,0h-12.1211v-1h12.1211Zm-24.24244,0H878.68966v-1h12.12109Zm-24.24243,0H854.44723v-1h12.12109Zm-24.24243,0H830.2048v-1h12.12109Zm-24.24243,0H805.96237v-1h12.12109Zm-24.24243,0h-12.1211v-1H793.841Zm-24.24243,0H757.4775v-1h12.1211Zm-24.24244,0H733.23507v-1h12.12109Zm-24.24243,0H708.99264v-1h12.12109Zm-24.24243,0H684.75021v-1H696.8713Zm-24.24243,0H660.50753v-1h12.12134Zm-24.24243,0h-12.1211v-1h12.1211Zm-24.24243,0H612.02267v-1H624.144Z"
+                        transform="translate(-187.09843 -216.5)" fill="#e6e6e6" />
+                    <rect x="406.80315" y="29" width="6" height="1" fill="#e6e6e6" />
+                    <rect x="615.80315" y="122" width="6" height="1" fill="#e6e6e6" />
+                    <path
+                        d="M790.96017,339.5H779.019v-1h11.94116Zm-23.88233,0H755.13668v-1h11.94116Zm-23.88232,0H731.25436v-1h11.94116Zm-23.88232,0H707.372v-1H719.3132Zm-23.88233,0h-11.9414v-1h11.9414Zm-23.88257,0H659.60714v-1H671.5483Zm-23.88232,0H635.72482v-1H647.666Zm-23.88233,0H611.84249v-1h11.94116Z"
+                        transform="translate(-187.09843 -216.5)" fill="#e6e6e6" />
+                    <rect x="406.80315" y="122" width="6" height="1" fill="#e6e6e6" />
+                    <rect x="498.80315" y="166" width="6" height="1" fill="#e6e6e6" />
+                    <path
+                        d="M673.61593,383.5H661.33029v-1h12.28564Zm-24.57153,0H636.75875v-1H649.0444Zm-24.57129,0H612.18746v-1h12.28565Z"
+                        transform="translate(-187.09843 -216.5)" fill="#e6e6e6" />
+                    <rect x="406.80315" y="166" width="6" height="1" fill="#e6e6e6" />
+                    <path
+                        d="M1006.0715,256.51V427.77a32.53759,32.53759,0,0,1-32.5,32.5h-348a32.3954,32.3954,0,0,1-24.16993-10.8v-1.53a31.40764,31.40764,0,0,0,23.97022,11.33l60.18994-60.19a8.49808,8.49808,0,0,1,12.02,0l31.98975,31.98,74.99023-74.98a8.49808,8.49808,0,0,1,12.02,0l43.98975,43.98,143.51025-143.5.98975-.03.46-.01Z"
+                        transform="translate(-187.09843 -216.5)" fill="#6c63ff" />
+                    <path
+                        d="M973.90157,460.5h-348a32.53685,32.53685,0,0,1-32.5-32.5V249a32.53685,32.53685,0,0,1,32.5-32.5h348a32.53684,32.53684,0,0,1,32.5,32.5V428A32.53684,32.53684,0,0,1,973.90157,460.5Zm-348-243a31.5357,31.5357,0,0,0-31.5,31.5V428a31.5357,31.5357,0,0,0,31.5,31.5h348a31.53569,31.53569,0,0,0,31.5-31.5V249a31.53569,31.53569,0,0,0-31.5-31.5Z"
+                        transform="translate(-187.09843 -216.5)" fill="#3f3d56" />
+                    <path
+                        d="M626.25509,460.35352l-.707-.707,60.34326-60.34326a8.50871,8.50871,0,0,1,12.02051,0L729.90157,431.293l74.98975-74.98975a8.50871,8.50871,0,0,1,12.02051,0L860.90157,400.293l144.64649-144.64649.707.707L860.90157,401.707,816.2048,357.01025a7.49965,7.49965,0,0,0-10.60645,0L729.90157,432.707,697.2048,400.01025a7.50909,7.50909,0,0,0-10.60645,0Z"
+                        transform="translate(-187.09843 -216.5)" fill="#3f3d56" />
+                    <circle cx="504.80315" cy="166.5" r="7" fill="#3f3d56" />
+                    <circle cx="621.80315" cy="122.5" r="7" fill="#3f3d56" />
+                    <circle cx="818.80315" cy="29.5" r="7" fill="#3f3d56" />
+                    <ellipse cx="171.4688" cy="254.69423" rx="26.28967" ry="37.41601" fill="#3f3d56" />
+                    <ellipse cx="171.4688" cy="254.69423" rx="26.28967" ry="37.41601" opacity="0.1"
+                        style="isolation:isolate" />
+                    <ellipse cx="175.01348" cy="254.69423" rx="26.28967" ry="37.41601" fill="#3f3d56" />
+                    <ellipse cx="175.01348" cy="254.69422" rx="22.54807" ry="32.09088" opacity="0.1"
+                        style="isolation:isolate" />
+                    <path
+                        d="M361.91656,486.65213v-3.767a8.74716,8.74716,0,0,1-5.0232-1.64113l.78787-2.49886a8.02982,8.02982,0,0,0,4.72777,1.60363,3.621,3.621,0,0,0,3.907-3.655c0-2.05143-1.28048-3.31943-3.71-4.43846-3.34886-1.4918-5.41723-3.2076-5.41723-6.45237a5.86421,5.86421,0,0,1,4.95765-6.00493v-3.767h2.03552v3.61789a7.988,7.988,0,0,1,4.26817,1.30534l-.8209,2.4617a7.255,7.255,0,0,0-4.13675-1.26817,3.152,3.152,0,0,0-3.48016,3.2076c0,1.93943,1.21478,2.90913,4.07118,4.252,3.38157,1.56647,5.08893,3.5059,5.08893,6.82531a6.24154,6.24154,0,0,1-5.18752,6.34037v3.87922Z"
+                        transform="translate(-187.09843 -216.5)" fill="#6c63ff" />
+                    <path
+                        d="M376.18518,449.75941a10.52626,10.52626,0,0,1,1.62647.3192l37.64605-32.28412-2.20057-11.84534,17.44265-5.65756,5.93357,20.59125a8,8,0,0,1-3.40936,8.97532l-47.67745,30.1704a10.4971,10.4971,0,1,1-9.36136-10.26915Z"
+                        transform="translate(-187.09843 -216.5)" fill="#a0616a" />
+                    <path
+                        d="M408.44,362.82113l0,0a14.22885,14.22885,0,0,1,16.34482,9.26593l11.25127,32.43013a4,4,0,0,1-3.35327,5.28837l-29.97332,3.20857a4,4,0,0,1-4.4231-3.83151l-1.16377-31.9132A14.22883,14.22883,0,0,1,408.44,362.82113Z"
+                        transform="translate(-187.09843 -216.5)" fill="#ccc" />
+                </svg>
+            </div>
             @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
+                @auth
+                    <div class="flex">
+                        <a href="{{ url('/dashboard') }}"
+                            class="w-full px-3 py-2 mx-0 my-1 text-sm text-center uppercase transition duration-200 ease-in-out bg-pink-400 rounded shadow hover:bg-pink-500 md:my-0 md:mx-1 hover:shadow-none">Dashboard</a>
+                    </div>
+                @else
+                    <div class="flex flex-col md:flex-row">
+                        <a href="{{ route('login') }}"
+                            class="w-full px-3 py-2 mx-0 my-1 text-sm text-center uppercase transition duration-200 ease-in-out bg-green-400 rounded shadow hover:bg-green-500 md:my-0 md:mx-1 hover:shadow-none">Login</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
+                            <a href="{{ route('register') }}"
+                                class="w-full px-3 py-2 mx-0 my-1 text-sm text-center uppercase transition duration-200 ease-in-out bg-purple-400 rounded shadow hover:bg-purple-500 md:my-0 md:mx-1 hover:shadow-none">Register</a>
                         @endif
-                    @endauth
-                </div>
+                    </div>
+                @endauth
             @endif
-
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
-                        <g clip-path="url(#clip0)" fill="#EF3B2D">
-                            <path d="M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z"/>
-                        </g>
-                    </svg>
-                </div>
-
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Documentation</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com" class="underline text-gray-900 dark:text-white">Laracasts</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/" class="underline text-gray-900 dark:text-white">Laravel News</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 sm:text-left">
-                        <div class="flex items-center">
-                            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">
-                                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-
-                            <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                                Shop
-                            </a>
-
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">
-                                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
-
-                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                                Sponsor
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </div>
-                </div>
-            </div>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>
