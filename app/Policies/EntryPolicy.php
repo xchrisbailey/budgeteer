@@ -13,6 +13,10 @@ class EntryPolicy {
         return $user->id === $entry->user_id;
     }
 
+    public function edit(User $user, Entry $entry): bool {
+        return $user->id === $entry->user_id;
+    }
+
     public function update(User $user, Entry $entry): bool {
         return $user->id === $entry->user_id;
     }
