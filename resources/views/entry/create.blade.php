@@ -4,7 +4,7 @@
             {{ __('Add Entry') }}
         </h2>
     </x-slot>
-    <div class="w-full p-5 mx-auto mt-10 bg-white rounded md:w-1/2">
+    <div class="w-full p-5 mx-auto mt-10 bg-white rounded-lg shadow md:w-1/2">
         <form action="/entry" method="post">
             @csrf
             <div>

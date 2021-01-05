@@ -15,7 +15,7 @@
 </head>
 
 <body class="antialiased bg-gray-200">
-    <div class="flex items-center justify-center w-screen h-screen column">
+    <div class="flex flex-col items-center justify-center w-screen h-screen column">
         <div class="flex flex-col justify-between w-full p-3 mx-2 bg-white rounded-lg shadow-md md:w-1/3">
             <div class="mb-3 text-center">
                 <h1 class="text-lg font-semibold text-gray-800 uppercase">budgeteer</h1>
@@ -95,6 +95,11 @@
                         transform="translate(-187.09843 -216.5)" fill="#ccc" />
                 </svg>
             </div>
+            <div class="text-sm text-gray-800 text-center">
+                <p>50/30/20 budget tracking made simple</p>
+            </div>
+        </div>
+        <div class="flex flex-col justify-between w-full p-3 mt-3 mx-2 bg-white rounded-lg shadow-md md:w-1/3">
             @if (Route::has('login'))
                 @auth
                     <div class="flex">

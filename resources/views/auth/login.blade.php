@@ -21,9 +21,9 @@
                     <span class="ml-2">{{ __('Remember me') }}</span>
                 </label>
             </div>
-            <div class="flex items-center justify-between mt-4">
+            <div class="flex items-baseline justify-between mt-4">
                 @if (Route::has('password.request'))
-                    <a class="mr-2 text-sm text-gray-600 underline hover:text-gray-900"
+                    <a class="mr-2 text-sm text-gray-600 underline hover:text-gray-900 mt-auto"
                         href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
                     </a>
