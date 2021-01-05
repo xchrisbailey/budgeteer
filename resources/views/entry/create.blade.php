@@ -4,7 +4,7 @@
       {{ __('Add Entry') }}
     </h2>
   </x-slot>
-  <div class="w-1/2 p-5 mx-auto mt-10 bg-white rounded">
+  <div class="w-full md:w-1/2 p-5 mx-auto mt-10 bg-white rounded">
     <form action="/entry" method="post">
       @csrf
       <label for="amount" class="text-xs font-semibold text-gray-600 uppercase">Amount</label>

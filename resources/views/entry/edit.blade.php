@@ -4,7 +4,7 @@
             {{ __('Edit Entry') }}
         </h2>
     </x-slot>
-    <div class="w-1/2 p-5 mx-auto mt-10 bg-white rounded">
+    <div class="w-full md:w-1/2 p-5 mx-auto mt-10 bg-white rounded">
         <form action="/entry/{{ $entry->id }}" method="post">
             @csrf
             @method("PUT")
@@ -22,7 +22,7 @@
                 <option value="savings" @if($entry->category == "savings") selected @endif>savings</option>
                 <option value="income" @if($entry->category == "income") selected @endif>income</option>
             </select>
-            <input type="submit" value="add"
+            <input type="submit" value="update"
                 class="w-full px-3 py-2 mt-2 font-medium text-white uppercase bg-purple-600 rounded shadow-lg cursor-pointer hover:bg-purple-700">
         </form>
     </div>
