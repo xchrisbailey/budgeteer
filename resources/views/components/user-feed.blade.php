@@ -33,7 +33,7 @@
     <tbody>
       @forelse ($entries as $entry)
         <tr class="even:bg-gray-100">
-          <td class="py-3 px-4">{{ $entry->description }}</td>
+          <td class="py-3 px-4">{{ ucwords( $entry->description ) }}</td>
           <td class="py-3 px-4">
             @if ($entry->category === 'income')
               <span class="text-blue-800">${{ cents_to_dollars($entry->amount) }}</span>
@@ -41,10 +41,10 @@
               <span class="text-red-800">${{ cents_to_dollars($entry->amount) }}</span>
             @endif
           </td>
-          <td class="py-3 px-4">{{ $entry->category }}</td>
+          <td class="py-3 px-4 uppercase">{{ $entry->category }}</td>
           <td class="text-right py-3 px-4">
             <a href="{{ route('entry.edit', $entry->id) }}" class="m-0 p-0">
-              <button class="rounded bg-yellow-300 hover:bg-yellow-400 p-2 shadow">
+              <button class="rounded bg-yellow-300 hover:bg-yellow-400 p-2 shadow transition ease-in-out duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
                   stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -55,7 +55,7 @@
             <form action="{{ route('entry.delete', $entry->id) }}" method="POST" class="inline m-0 p-0">
               @csrf
               @method("DELETE")
-              <button class="rounded bg-red-300 hover:bg-red-400 p-2 shadow">
+              <button class="rounded bg-red-300 hover:bg-red-400 p-2 shadow transition ease-in-out duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
                   stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -70,4 +70,15 @@
       @endforelse
     </tbody>
   </table>
+</div>
+
+<div class="absolute bottom-0 right-0 mr-10 mb-10">
+  <a href="{{ route('entry.create') }}">
+    <button class="bg-green-300 hover:bg-green-400 rounded-full p-3 shadow outline:none focus:none transition ease-in-out duration-200">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-semibold" fill="none" viewBox="0 0 24 24"
+        stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+      </svg>
+    </button>
+  </a>
 </div>
