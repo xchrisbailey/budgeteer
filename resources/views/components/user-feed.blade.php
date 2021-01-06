@@ -24,6 +24,7 @@
     <table class="w-full bg-white table-auto">
         <thead class="text-white bg-gray-800">
             <tr>
+                <td class="px-4 py-3 text-sm font-semibold uppercase">Date</td>
                 <td class="px-4 py-3 text-sm font-semibold uppercase">Description</td>
                 <td class="px-4 py-3 text-sm font-semibold uppercase">Amount</td>
                 <td class="px-4 py-3 text-sm font-semibold uppercase">Category</td>
@@ -33,6 +34,8 @@
         <tbody>
             @forelse ($entries as $entry)
                 <tr class="even:bg-gray-100">
+
+                    <td class="px-4 py-3">{{ date_create_from_format('Y-m-d', $entry->spend_date)->format('F d,Y') }}</td>
                     <td class="px-4 py-3">{{ ucwords($entry->description) }}</td>
                     <td class="px-4 py-3">
                         @if ($entry->category === 'income')

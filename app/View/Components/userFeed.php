@@ -23,7 +23,7 @@ class userFeed extends Component {
     public function render() {
         $entries = DB::table('entries')
             ->where('user_id', '=', current_user()->id)
-            ->orderBy('spend_date', 'ASC')
+            ->orderBy('spend_date', 'DESC')
             ->get();
 
         return view('components.user-feed', ['entries' => $entries]);
