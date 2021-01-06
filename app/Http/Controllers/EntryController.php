@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Entry;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 
@@ -52,9 +53,11 @@ class EntryController extends Controller {
             'amount' => 'required|numeric|gt:0',
             'description' => 'required',
             'category' => 'required',
+            'spend_date' => 'required',
         ]);
 
         $entry['amount'] = dollars_to_cents($entry['amount']);
+        $entry['spend_date'] = Carbon::parse($entry['spend_date']);
         return $entry;
     }
 }

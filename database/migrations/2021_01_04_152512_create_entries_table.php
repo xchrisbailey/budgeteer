@@ -17,6 +17,7 @@ class CreateEntriesTable extends Migration {
             $table->integer('amount');
             $table->string('description');
             $table->string('category');
+            $table->date('spend_date');
             $table->timestamps();
         });
     }

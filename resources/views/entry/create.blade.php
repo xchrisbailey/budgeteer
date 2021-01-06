@@ -25,6 +25,8 @@
                     <option value="income">income</option>
                 </select>
             </div>
+
+            <x-date-picker />
             <div class="flex justify-end">
                 <x-button class="w-1/4 mt-2 bg-purple-600 hover:bg-purple-700">Add</x-button>
             </div>
