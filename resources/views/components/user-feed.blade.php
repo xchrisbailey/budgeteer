@@ -77,7 +77,7 @@
 
 <div class="absolute bottom-0 right-0 mb-10 mr-10">
     <a href="{{ route('entry.create') }}"
-        class="inline-flex items-center justify-center p-3 transition duration-200 ease-in-out bg-green-700 rounded-full shadow-lg hover:bg-green-600 hover:shadow outline:none focus:none">
+        class="inline-flex items-center justify-center p-3 transition duration-200 ease-in-out bg-purple-400 rounded-full shadow-lg hover:bg-purple-300 hover:shadow outline:none focus:none">
         <svg xmlns="http://www.w3.org/2000/svg" class="text-white w-7 h-7 text-semibold" fill="none" viewBox="0 0 24 24"
             stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
