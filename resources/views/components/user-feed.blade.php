@@ -42,9 +42,9 @@
                         @endif
                     </td>
                     <td class="px-4 py-3 uppercase">{{ $entry->category }}</td>
-                    <td class="px-4 py-3 text-right">
+                    <td class="flex flex-col justify-between px-4 py-3 md:flex-row md:justify-end">
                         <a href="{{ route('entry.edit', $entry->id) }}"
-                            class="inline-flex p-2 mr-2 transition duration-200 ease-in-out bg-yellow-300 rounded-full shadow hover:bg-yellow-400">
+                            class="inline-flex p-2 mb-1 mr-2 transition duration-200 ease-in-out bg-yellow-300 rounded-full shadow md:mb-0 hover:bg-yellow-400">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 p-0 m-0" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -75,7 +75,7 @@
 <div class="absolute bottom-0 right-0 mb-10 mr-10">
     <a href="{{ route('entry.create') }}"
         class="inline-flex items-center justify-center p-3 transition duration-200 ease-in-out bg-green-700 rounded-full shadow-lg hover:bg-green-600 hover:shadow outline:none focus:none">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-semibold text-white" fill="none" viewBox="0 0 24 24"
+        <svg xmlns="http://www.w3.org/2000/svg" class="text-white w-7 h-7 text-semibold" fill="none" viewBox="0 0 24 24"
             stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
         </svg>
