@@ -95,11 +95,11 @@
                         transform="translate(-187.09843 -216.5)" fill="#ccc" />
                 </svg>
             </div>
-            <div class="text-sm text-gray-800 text-center">
+            <div class="text-sm text-center text-gray-800">
                 <p>50/30/20 budget tracking made simple</p>
             </div>
         </div>
-        <div class="flex flex-col justify-between w-full p-3 mt-3 mx-2 bg-white rounded-lg shadow-md md:w-1/3">
+        <div class="flex flex-col justify-between w-full p-3 mx-2 mt-3 bg-white rounded-lg shadow-md md:w-1/3">
             @if (Route::has('login'))
                 @auth
                     <div class="flex">
@@ -108,12 +108,12 @@
                     </div>
                 @else
                     <div class="flex flex-col md:flex-row">
-                        <a href="{{ route('login') }}"
-                            class="w-full px-3 py-2 mx-0 my-1 text-sm text-center uppercase transition duration-200 ease-in-out bg-green-400 rounded shadow hover:bg-green-500 md:my-0 md:mx-1 hover:shadow-none">Login</a>
+                        <x-a-button href="{{ route('login') }}" class="w-full bg-green-400 hover:bg-green-500">Login
+                        </x-a-button>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}"
-                                class="w-full px-3 py-2 mx-0 my-1 text-sm text-center uppercase transition duration-200 ease-in-out bg-purple-400 rounded shadow hover:bg-purple-500 md:my-0 md:mx-1 hover:shadow-none">Register</a>
+                            <x-a-button href="{{ route('register') }}" class="w-full bg-purple-400 hover:bg-purple-500">
+                                Register</x-a-button>
                         @endif
                     </div>
                 @endauth
