@@ -18,3 +18,6 @@ mix
     require('tailwindcss'),
     require('autoprefixer'),
   ]);
+
+mix.copy('node_modules/flatpickr/dist/flatpickr.css', 'public/css/flatpickr.css');
+mix.copy('node_modules/flatpickr/dist/flatpickr.min.js', 'public/js/flatpickr.js');

@@ -2,35 +2,14 @@
 
 namespace App\View\Components;
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\View\Component;
 
-class userFeed extends Component {
-  /**
-   * Create a new component instance.
-   *
-   * @return void
-   */
-  public function __construct() {
-    //
-  }
+class feedChart extends Component {
+  public $chart;
 
-  /**
-   * Get the view / contents that represent the component.
-   *
-   * @return \Illuminate\Contracts\View\View|string
-   */
-  public function render() {
-    $entries = DB::table('entries')
-      ->where('user_id', '=', current_user()->id)
-      ->orderBy('spend_date', 'DESC')
-      ->get();
-
-    $totals = $entries->groupBy('category')->map(function ($item, $key) {
-      return $key = $item->sum('amount');
-    }, []);
-
-    $chart = app()
+  public function __construct($entries) {
+    $totals = category_totals($entries);
+    $this->chart = app()
       ->chartjs->name('pieChart')
       ->type('pie')
       ->size(['width' => 'auto', 'height' => 250])
@@ -47,7 +26,9 @@ class userFeed extends Component {
         ],
       ])
       ->options([]);
+  }
 
-    return view('components.user-feed', compact('entries', 'chart', 'totals'));
+  public function render() {
+    return view('components.feed-chart');
   }
 }

@@ -61,7 +61,7 @@
                     <template x-for="(date, dateIndex) in no_of_days" :key="dateIndex">
                         <div style="width: 14.28%" class="px-1 mb-1">
                             <div @click="getDateValue(date)" x-text="date"
-                                class="text-sm leading-none leading-loose text-center transition duration-100 ease-in-out rounded-full cursor-pointer"
+                                class="text-sm leading-loose text-center transition duration-100 ease-in-out rounded-full cursor-pointer"
                                 :class="{'bg-blue-500 text-white': isToday(date) == true, 'text-gray-700 hover:bg-blue-200': isToday(date) == false }">
                             </div>
                         </div>
@@ -104,7 +104,7 @@
             },
 
             getDateValue(date) {
-                let selectedDate = new Date(this.year, this.month, date);
+                let selectedDate = new Date(this.year, this.month + 1, date);
                 this.datepickerValue = selectedDate.toDateString();
 
                 this.$refs.date.value = selectedDate.getFullYear() + "-" + ('0' + selectedDate.getMonth()).slice(-

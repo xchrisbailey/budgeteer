@@ -5,29 +5,31 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 class CreateEntriesTable extends Migration {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up() {
-        Schema::create('entries', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id');
-            $table->integer('amount');
-            $table->string('description');
-            $table->string('category');
-            $table->date('spend_date');
-            $table->timestamps();
-        });
-    }
+  /**
+   * Run the migrations.
+   *
+   * @return void
+   */
+  public function up() {
+    Schema::create('entries', function (Blueprint $table) {
+      $table->id();
+      $table->foreignId('user_id');
+      $table->integer('amount');
+      $table->string('description');
+      $table->string('category');
+      $table->date('spend_date');
+      $table->integer('month');
+      $table->integer('year');
+      $table->timestamps();
+    });
+  }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down() {
-        Schema::dropIfExists('entries');
-    }
+  /**
+   * Reverse the migrations.
+   *
+   * @return void
+   */
+  public function down() {
+    Schema::dropIfExists('entries');
+  }
 }

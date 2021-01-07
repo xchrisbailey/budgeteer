@@ -23,7 +23,7 @@
             </div>
             <div class="flex items-baseline justify-between mt-4">
                 @if (Route::has('password.request'))
-                    <a class="mr-2 text-sm text-gray-600 underline hover:text-gray-900 mt-auto"
+                    <a class="mt-auto mr-2 text-sm text-gray-600 underline hover:text-gray-900"
                         href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
                     </a>

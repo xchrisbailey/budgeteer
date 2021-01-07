@@ -108,12 +108,14 @@
                     </div>
                 @else
                     <div class="flex flex-col md:flex-row">
-                        <x-a-button href="{{ route('login') }}" class="w-full bg-green-400 hover:bg-green-500">Login
+                        <x-a-button href="{{ route('login') }}" class="w-full bg-green-400 hover:bg-green-500">
+                            Login
                         </x-a-button>
 
                         @if (Route::has('register'))
                             <x-a-button href="{{ route('register') }}" class="w-full bg-purple-400 hover:bg-purple-500">
-                                Register</x-a-button>
+                                Register
+                            </x-a-button>
                         @endif
                     </div>
                 @endauth
