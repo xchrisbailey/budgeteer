@@ -10,34 +10,32 @@ use Illuminate\Support\Facades\DB;
 
 class EntryController extends Controller {
   public function index(Request $request) {
+    if ($request->month && $request->year) {
+      $month = $request->month;
+      $year = $request->year;
+    } else {
+      $month = date('n');
+      $year = date('Y');
+    }
+
+    $current_date = strtotime($year . '-' . $month . '-' . date('d'));
+    $previous_date = [
+      'month' => (int) date('m', strtotime('-1 month', $current_date)),
+      'year' => (int) date('Y', strtotime('-1 month', $current_date)),
+    ];
+    $next_date = [
+      'month' => (int) date('m', strtotime('+1 month', $current_date)),
+      'year' => (int) date('Y', strtotime('+1 month', $current_date)),
+    ];
+
     $entries = DB::table('entries')
       ->where('user_id', '=', current_user()->id)
+      ->where('month', '=', $month)
+      ->where('year', '=', $year)
       ->orderBy('spend_date', 'DESC')
       ->get();
 
-    $totals = $entries->groupBy('category')->map(function ($item, $key) {
-      return $key = $item->sum('amount');
-    }, []);
-
-    $chart = app()
-      ->chartjs->name('pieChart')
-      ->type('pie')
-      ->size(['width' => 'auto', 'height' => 250])
-      ->labels(['want', 'need', 'savings', 'income'])
-      ->datasets([
-        [
-          'backgroundColor' => ['#e3342f', '#ffed4a', '#3490dc', '#38c172'],
-          'data' => [
-            $totals->has('want') ? cents_to_dollars($totals['want']) : 0,
-            $totals->has('need') ? cents_to_dollars($totals['need']) : 0,
-            $totals->has('savings') ? cents_to_dollars($totals['savings']) : 0,
-            $totals->has('income') ? cents_to_dollars($totals['income']) : 0,
-          ],
-        ],
-      ])
-      ->options([]);
-
-    return view('user.dashboard', compact('entries'));
+    return view('user.dashboard', compact('entries', 'previous_date', 'next_date'));
   }
   public function show(Entry $entry) {
     if (!Gate::allows('edit', $entry)) {
@@ -51,9 +49,6 @@ class EntryController extends Controller {
   }
 
   public function store(Request $request) {
-    /* $entry = current_user() */
-    /*   ->entries() */
-    /*   ->new($this->validateAndPrepareEntry()); */
     $entry = new Entry($this->validateAndPrepareEntry());
     $entry->year = (int) date('Y', strtotime($entry['spend_date']));
     $entry->month = (int) date('m', strtotime($entry['spend_date']));

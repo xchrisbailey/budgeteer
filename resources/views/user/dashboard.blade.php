@@ -33,8 +33,9 @@
                 {{-- feed month and change buttons --}}
                 <div class="flex items-center justify-between w-full px-3 py-2 mb-2 md:justify-center">
                     <div>
-                        <a href="#"
-                            class="inline-flex p-1 mr-2 transition duration-200 ease-in-out bg-blue-400 rounded-full shadow hover:bg-blue-300 ">
+                        <a href="{{ route('dashboard', ['month' => $previous_date['month'], 'year' => $previous_date['year']]) }}"
+                            class="inline-flex p-1 mr-2 transition duration-200 ease-in-out bg-blue-400 rounded-full
+                            shadow hover:bg-blue-300 ">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -43,11 +44,12 @@
                         </a>
                     </div>
                     <div>
-                        <h2 class="mx-3 text-2xl font-semibold tracking-wider text-gray-900 uppercase">{{ date('F Y') }}
+                        <h2 class="mx-3 text-2xl font-semibold tracking-wider text-gray-900 uppercase">
+                            {{ request()->month && request()->year ? date('F Y', strtotime(request()->year . '/' . request()->month . '/1')) : date('F Y') }}
                         </h2>
                     </div>
                     <div>
-                        <a href="#"
+                        <a href="{{ route('dashboard', ['month' => $next_date['month'], 'year' => $next_date['year']]) }}"
                             class="inline-flex p-1 ml-2 transition duration-200 ease-in-out bg-blue-400 rounded-full shadow hover:bg-blue-300 ">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
