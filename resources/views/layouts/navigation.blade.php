@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-purple-200 border-b border-purple-300 shadow-lg">
+<nav x-data="{ open: false }" class="bg-gray-800 border-b border-gray-900 shadow-lg">
     <!-- Primary Navigation Menu -->
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="flex items-center flex-shrink-0">
                     <a href="{{ route('dashboard') }}">
-                        <h1 class="text-sm font-semibold tracking-wider text-gray-900 uppercase">budgeteer</h1>
+                        <h1 class="text-sm font-semibold tracking-wider text-purple-200 uppercase">budgeteer</h1>
                     </a>
                 </div>
 
@@ -23,7 +23,7 @@
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button
-                            class="flex items-center text-sm font-medium text-gray-700 transition duration-150 ease-in-out hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
+                            class="flex items-center text-sm font-medium text-gray-200 transition duration-150 ease-in-out hover:text-gray-400 hover:border-gray-300 focus:outline-none focus:text-gray-300 focus:border-gray-300">
                             <div>{{ Auth::user()->name }}</div>
 
                             <div class="ml-1">
@@ -54,7 +54,7 @@
             <!-- Hamburger -->
             <div class="flex items-center -mr-2 sm:hidden">
                 <button @click="open = ! open"
-                    class="inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500">
+                    class="inline-flex items-center justify-center p-2 text-gray-200 transition duration-150 ease-in-out rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-300">
                     <svg class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                         <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex"
                             stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -76,7 +76,7 @@
         </div>
 
         <!-- Responsive Settings Options -->
-        <div class="pt-4 pb-1 border-t border-gray-200">
+        <div class="pt-4 pb-1 border-t border-gray-900">
             <div class="flex items-center px-4">
                 <div class="flex-shrink-0">
                     <svg class="w-10 h-10 text-gray-400 fill-current" xmlns="http://www.w3.org/2000/svg" fill="none"
