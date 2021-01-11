@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            {{ __('Dashboard') }}
+            Let's see your progress for the month <span class="text-blue-600">{{ current_user()->name }}</span>
         </h2>
     </x-slot>
     <div class="py-12">
@@ -29,21 +29,19 @@
                 </div>
             @endif
 
-            <div class="container mx-auto">
-                <x-feed-month-controls :previousDate="$previous_date" :nextDate="$next_date"
-                    :currentMonth="request()->month" :currentYear="request()->year" />
+            <x-feed-month-controls :previousDate="$previous_date" :nextDate="$next_date"
+                :currentMonth="request()->month" :currentYear="request()->year" />
 
-                <div class="grid grid-cols-1 gap-4 mb-3 md:grid-cols-2">
-                    {{-- entry chart --}}
-                    <x-feed-chart :entries="$entries" />
+            <div class="grid grid-cols-1 gap-4 mb-3 md:grid-cols-2">
+                {{-- entry chart --}}
+                <x-feed-chart :entries="$entries" />
 
-                    {{-- entry stats --}}
-                    <x-entry-stats :entries="$entries" />
-                </div>
-
-                {{-- entry table --}}
-                <x-entry-table :entries="$entries" />
+                {{-- entry stats --}}
+                <x-entry-stats :entries="$entries" />
             </div>
+
+            {{-- entry table --}}
+            <x-entry-table :entries="$entries" />
         </div>
     </div>
     <div class="sticky bottom-0 flex justify-end w-full px-3 py-4">
