@@ -1,4 +1,4 @@
-<div class="flex flex-col w-full h-full p-2 bg-white md:rounded shadow">
+<div class="flex flex-col w-full h-full p-2 bg-white shadow md:rounded">
     @if ($totals->has('need'))
         <div
             class="{{ $totals->has('income') ? ($totals['need'] / $totals['income'] > 0.75 ? 'w-3/4' : 'w-1/2') : 'w-full' }} bg-yellow-400 flex justify-between px-3 py-1 rounded-full mb-2">

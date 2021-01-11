@@ -25,7 +25,7 @@
     <div class="flex items-center justify-between w-full px-3 py-2 mb-2 md:justify-center">
         <div>
             <a href="#"
-                class="inline-flex p-1 mr-2 transition duration-200 ease-in-out bg-blue-400 rounded-full shadow hover:bg-blue-300 ">
+                class="inline-flex p-1 mr-2 bg-blue-400 rounded-full shadow transition duration-200 ease-in-out hover:bg-blue-300 ">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -37,7 +37,7 @@
         </div>
         <div>
             <a href="#"
-                class="inline-flex p-1 ml-2 transition duration-200 ease-in-out bg-blue-400 rounded-full shadow hover:bg-blue-300 ">
+                class="inline-flex p-1 ml-2 bg-blue-400 rounded-full shadow transition duration-200 ease-in-out hover:bg-blue-300 ">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -47,7 +47,7 @@
     </div>
 
 
-    <div class="grid grid-cols-1 gap-4 mb-3 md:grid-cols-2">
+    <div class="mb-3 grid grid-cols-1 gap-4 md:grid-cols-2">
         {{-- entry chart --}}
         <x-feed-char :entries="$entries" />
 
@@ -62,7 +62,7 @@
 
     <div class="sticky bottom-0 flex justify-end w-full px-3 py-4">
         <a href="{{ route('entry.create') }}"
-            class="inline-flex items-center justify-center p-3 transition duration-200 ease-in-out bg-purple-400 rounded-full shadow-lg hover:bg-purple-300 hover:shadow outline:none focus:none">
+            class="inline-flex items-center justify-center p-3 bg-purple-400 rounded-full shadow-lg transition duration-200 ease-in-out hover:bg-purple-300 hover:shadow outline:none focus:none">
             <svg xmlns="http://www.w3.org/2000/svg" class="text-white w-7 h-7 text-semibold" fill="none"
                 viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />

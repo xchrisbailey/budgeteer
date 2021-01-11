@@ -32,7 +32,7 @@
             <x-feed-month-controls :previousDate="$previous_date" :nextDate="$next_date"
                 :currentMonth="request()->month" :currentYear="request()->year" />
 
-            <div class="grid grid-cols-1 gap-4 mb-3 md:grid-cols-2">
+            <div class="mb-3 grid grid-cols-1 gap-4 md:grid-cols-2">
                 {{-- entry chart --}}
                 <x-feed-chart :entries="$entries" />
 
@@ -46,7 +46,7 @@
     </div>
     <div class="sticky bottom-0 flex justify-end w-full px-3 py-4">
         <a href="{{ route('entry.create') }}"
-            class="inline-flex items-center justify-center p-3 transition duration-200 ease-in-out bg-purple-400 rounded-full shadow-lg hover:bg-purple-300 hover:shadow outline:none focus:none">
+            class="inline-flex items-center justify-center p-3 bg-purple-400 rounded-full shadow-lg transition duration-200 ease-in-out hover:bg-purple-300 hover:shadow outline:none focus:none">
             <svg xmlns="http://www.w3.org/2000/svg" class="text-white w-7 h-7 text-semibold" fill="none"
                 viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
