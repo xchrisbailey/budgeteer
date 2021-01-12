@@ -1,4 +1,4 @@
-<div class="overflow-scroll border-b border-gray-200 shadow md:overflow-hidden md:rounded">
+<section class="overflow-scroll border-b border-gray-200 shadow md:overflow-hidden md:rounded">
     <table class="w-full bg-white table-auto">
         <thead class="text-white bg-gray-800">
             <tr>
@@ -52,4 +52,4 @@
             @endforelse
         </tbody>
     </table>
-</div>
+</section>
