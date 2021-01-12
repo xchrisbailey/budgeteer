@@ -6,7 +6,7 @@
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">{{ __('Add Entry') }}</h2>
     </x-slot>
-    <div class="mx-auto sm:px-6 lg:px-8">
+    <section class="mx-auto sm:px-6 lg:px-8">
         <div class="w-full p-5 mt-5 bg-white rounded-lg shadow">
             <form action="/entry" method="post">
                 @csrf
@@ -15,10 +15,12 @@
                     <x-input type="number" step="0.01" name="amount" id="amount" class="w-full mb-3 " required
                         autofocus />
                 </div>
+
                 <div>
                     <x-label for="description" :value="__('Description')" />
                     <x-input type="text" name="description" id="description" class="w-full mb-3 " required />
                 </div>
+
                 <div>
                     <x-label for="category" :value="__('Category')" />
                     <select name="category" id="category"
@@ -41,7 +43,7 @@
                 </div>
             </form>
         </div>
-    </div>
+    </section>
     <x-slot name="scripts">
         <script>
             flatpickr('#spend_date', {

@@ -8,7 +8,7 @@
             {{ __('Edit Entry') }}
         </h2>
     </x-slot>
-    <div class="mx-auto sm:px-6 lg:px-8">
+    <section class="mx-auto sm:px-6 lg:px-8">
         <div class="w-full p-5 mx-auto mt-5 bg-white rounded">
             <form action="/entry/{{ $entry->id }}" method="post">
                 @csrf
@@ -18,18 +18,22 @@
                     <x-input type="number" step="0.01" name="amount" id="amount"
                         value="{{ cents_to_dollars($entry->amount) }}" class="w-full mb-3" required />
                 </div>
+
                 <div>
                     <x-label for="description" :value="__('Description')" />
                     <x-input type="text" name="description" id="description" value="{{ $entry->description }}"
                         class="w-full mb-3" required />
                 </div>
+
                 <div>
                     <x-label for="category" :value="__('Category')" />
                     <select name="category" id="category"
                         class="w-full mb-3 text-black bg-white border border-gray-200 rounded" required>
-                        <option value="want" @if ($entry->category == 'want') selected
+                        <option value="want" @if ($entry->category == 'want')
+                            selected
                             @endif>want</option>
-                        <option value="need" @if ($entry->category == 'need') selected
+                        <option value="need" @if ($entry->category == 'need')
+                            selected
                             @endif>need</option>
                         <option value="savings" @if ($entry->category == 'savings')
                             selected
@@ -51,7 +55,7 @@
                 </div>
             </form>
         </div>
-    </div>
+    </section>
 
     <x-slot name="scripts">
         <script>

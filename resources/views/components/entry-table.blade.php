@@ -26,7 +26,7 @@
                     <td class="px-4 py-3 uppercase">{{ $entry->category }}</td>
                     <td class="flex flex-col justify-between px-4 py-3 md:flex-row md:justify-end">
                         <a href="{{ route('entry.edit', $entry->id) }}"
-                            class="inline-flex p-2 mb-1 mr-2 bg-yellow-300 rounded-full shadow transition duration-200 ease-in-out md:mb-0 hover:bg-yellow-400">
+                            class="inline-flex p-2 mb-1 mr-2 transition duration-200 ease-in-out bg-yellow-300 rounded-full shadow md:mb-0 hover:bg-yellow-400">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 p-0 m-0" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -37,7 +37,7 @@
                             @csrf
                             @method("DELETE")
                             <button
-                                class="p-2 bg-red-300 rounded-full shadow transition duration-200 ease-in-out hover:bg-red-400">
+                                class="p-2 transition duration-200 ease-in-out bg-red-300 rounded-full shadow hover:bg-red-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
                                     stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
