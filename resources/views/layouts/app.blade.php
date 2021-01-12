@@ -32,6 +32,8 @@
             <main>
                 {{ $slot }}
             </main>
+
+            {{ $fab ?? null }}
         </div>
     </div>
     {{ $scripts ?? null }}
