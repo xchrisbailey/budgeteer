@@ -5,6 +5,8 @@
         </h2>
     </header>
     <article>
-        {!! $chart->render() !!}
+        @if ($chart)
+            {!! $chart->render() !!}
+        @endif
     </article>
 </section>
