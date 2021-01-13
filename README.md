@@ -11,9 +11,9 @@
   </a>
 </p>
 
-> 50/30/20 budget tracker
+> a simple 50/30/20 budget tracker
 
-### 🏠 [Homepage](budgeteer.cbbapps.net)
+### 🏠 [Homepage](http://budgeteer.cbbapps.net)
 
 ## Author
 
