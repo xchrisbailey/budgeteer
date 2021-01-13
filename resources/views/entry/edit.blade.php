@@ -5,7 +5,7 @@
     </x-slot>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            {{ __('Edit Entry') }}
+            Are there some changes you'd like to make <span class="text-indigo-700">{{ current_user()->name }}</span>?
         </h2>
     </x-slot>
     <section class="mx-auto sm:px-6 lg:px-8">

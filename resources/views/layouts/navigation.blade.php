@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="flex items-center flex-shrink-0">
                     <a href="{{ route('dashboard') }}">
-                        <h1 class="text-sm font-semibold tracking-wider text-purple-200 uppercase">budgeteer</h1>
+                        <h1 class="text-sm font-semibold tracking-widest text-purple-200 uppercase">budgeteer</h1>
                     </a>
                 </div>
 
