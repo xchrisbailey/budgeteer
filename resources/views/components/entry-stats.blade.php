@@ -1,7 +1,7 @@
 <section class="flex flex-col w-full h-full p-2 bg-white shadow md:rounded">
     <article>
         <header>
-            <h2 class="px-2 mb-2 text-lg tracking-wider text-gray-900 uppercase font-weight-semibold">Spent By Category
+            <h2 class="px-2 mb-2 text-lg tracking-wider text-gray-900 uppercase font-weight-semibold">Spending By Category
             </h2>
         </header>
         @if ($totals->has('need'))

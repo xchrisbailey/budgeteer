@@ -1,7 +1,7 @@
 <article class="flex flex-col items-center justify-center w-screen h-screen column">
 
     <header class="flex items-start justify-start w-full mb-1 text-gray-900 md:w-1/3">
-        <h1 class="text-lg font-semibold uppercase tracking-widest">
+        <h1 class="text-lg font-semibold tracking-widest uppercase">
             {{ $title }}
         </h1>
     </header>

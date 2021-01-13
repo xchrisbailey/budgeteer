@@ -28,6 +28,13 @@
                 </div>
             </header>
 
+            <!-- Page Alerts -->
+            @if ($errors->any())
+                <x-alert :kind="'error'" :message="$errors->first()" />
+            @elseif (session('message'))
+                <x-alert :kind="'success'" :message="session('message')" />
+            @endif
+
             <!-- Page Content -->
             <main>
                 {{ $slot }}
@@ -37,6 +44,13 @@
         </div>
     </div>
     {{ $scripts ?? null }}
+    <script>
+        document.getElementById('alertBtn').addEventListener("click", (e) => {
+            e.preventDefault();
+            document.getElementById('alertBox').classList.toggle("hidden");
+        })
+
+    </script>
 </body>
 
 </html>
