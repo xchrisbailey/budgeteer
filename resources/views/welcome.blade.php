@@ -15,11 +15,11 @@
 </head>
 
 <body class="antialiased bg-gray-200">
-    <div class="flex flex-col items-center justify-center w-screen h-screen column">
-        <div class="flex flex-col justify-between w-full p-3 mx-2 bg-white rounded-lg shadow-md md:w-1/3">
-            <div class="mb-3 text-center">
+    <main class="flex flex-col items-center justify-center w-screen h-screen column">
+        <section class="flex flex-col justify-between w-full p-3 mx-2 bg-white rounded-lg shadow-md md:w-1/3">
+            <header class="mb-3 text-center">
                 <h1 class="text-lg font-semibold text-gray-800 uppercase">budgeteer</h1>
-            </div>
+            </header>
             <div class="block w-full h-auto mb-3">
                 <svg id="e4744e0b-ee3a-4289-b7cd-f5efd80fd01c" class="w-full h-auto" data-name="Layer 1"
                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 825.80315 467">
@@ -98,8 +98,8 @@
             <div class="text-sm text-center text-gray-800">
                 <p>50/30/20 budget tracking made simple</p>
             </div>
-        </div>
-        <div class="flex flex-col justify-between w-full p-3 mx-2 mt-3 bg-white rounded-lg shadow-md md:w-1/3">
+        </section>
+        <section class="flex flex-col justify-between w-full p-3 mx-2 mt-3 bg-white rounded-lg shadow-md md:w-1/3">
             @if (Route::has('login'))
                 @auth
                     <div class="flex">
@@ -120,8 +120,8 @@
                     </div>
                 @endauth
             @endif
-        </div>
-    </div>
+        </section>
+    </main>
 </body>
 
 </html>

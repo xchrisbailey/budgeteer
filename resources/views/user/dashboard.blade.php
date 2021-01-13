@@ -4,7 +4,7 @@
             Let's check in on your spending <span class="text-blue-600">{{ current_user()->name }}</span>
         </h2>
     </x-slot>
-    <div class="py-12">
+    <section class="py-12">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <px-8></px-8>
             @if (session()->has('message'))
@@ -43,9 +43,9 @@
             {{-- entry table --}}
             <x-entry-table :entries="$entries" />
         </div>
-    </div>
+    </section>
     <x-slot name="fab">
-        <div class="sticky bottom-0 flex justify-end w-full px-7 py-4">
+        <section class="sticky bottom-0 flex justify-end w-full px-7 py-4">
             <a href="{{ route('entry.create') }}"
                 class="inline-flex items-center justify-center p-3 bg-purple-400 rounded-full shadow-lg transition duration-200 ease-in-out hover:bg-purple-300 hover:shadow outline:none focus:none">
                 <svg xmlns="http://www.w3.org/2000/svg" class="text-white w-7 h-7 text-semibold" fill="none"
@@ -54,6 +54,6 @@
                         d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>
             </a>
-        </div>
+        </section>
     </x-slot>
 </x-app-layout>
