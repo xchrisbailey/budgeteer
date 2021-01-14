@@ -104,7 +104,7 @@
                 @auth
                     <div class="flex">
                         <a href="{{ url('/dashboard') }}"
-                            class="w-full px-3 py-2 mx-0 my-1 text-sm text-center uppercase bg-pink-400 rounded shadow transition duration-200 ease-in-out hover:bg-pink-500 md:my-0 md:mx-1 hover:shadow-none">Dashboard</a>
+                            class="w-full px-3 py-2 mx-0 my-1 text-sm text-center uppercase transition duration-200 ease-in-out bg-pink-400 rounded shadow hover:bg-pink-500 md:my-0 md:mx-1 hover:shadow-none">Dashboard</a>
                     </div>
                 @else
                     <div class="flex flex-col md:flex-row">

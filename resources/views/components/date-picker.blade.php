@@ -22,7 +22,7 @@
                     </div>
                     <div>
                         <button type="button"
-                            class="inline-flex p-1 rounded-full cursor-pointer transition duration-100 ease-in-out hover:bg-gray-200"
+                            class="inline-flex p-1 transition duration-100 ease-in-out rounded-full cursor-pointer hover:bg-gray-200"
                             :class="{'cursor-not-allowed opacity-25': month == 0 }"
                             :disabled="month == 0 ? true : false" @click="month--; getNoOfDays()">
                             <svg class="inline-flex w-6 h-6 text-gray-500" fill="none" viewBox="0 0 24 24"
@@ -32,7 +32,7 @@
                             </svg>
                         </button>
                         <button type="button"
-                            class="inline-flex p-1 rounded-full cursor-pointer transition duration-100 ease-in-out hover:bg-gray-200"
+                            class="inline-flex p-1 transition duration-100 ease-in-out rounded-full cursor-pointer hover:bg-gray-200"
                             :class="{'cursor-not-allowed opacity-25': month == 11 }"
                             :disabled="month == 11 ? true : false" @click="month++; getNoOfDays()">
                             <svg class="inline-flex w-6 h-6 text-gray-500" fill="none" viewBox="0 0 24 24"
@@ -61,7 +61,7 @@
                     <template x-for="(date, dateIndex) in no_of_days" :key="dateIndex">
                         <div style="width: 14.28%" class="px-1 mb-1">
                             <div @click="getDateValue(date)" x-text="date"
-                                class="text-sm leading-loose text-center rounded-full cursor-pointer transition duration-100 ease-in-out"
+                                class="text-sm leading-loose text-center transition duration-100 ease-in-out rounded-full cursor-pointer"
                                 :class="{'bg-blue-500 text-white': isToday(date) == true, 'text-gray-700 hover:bg-blue-200': isToday(date) == false }">
                             </div>
                         </div>

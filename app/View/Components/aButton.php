@@ -4,8 +4,8 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class AppLayout extends Component {
+class aButton extends Component {
   public function render() {
-    return view("layouts.app");
+    return view("components.a-button");
   }
 }

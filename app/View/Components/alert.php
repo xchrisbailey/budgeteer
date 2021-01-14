@@ -13,12 +13,7 @@ class alert extends Component {
     $this->message = $message;
   }
 
-  /**
-   * Get the view / contents that represent the component.
-   *
-   * @return \Illuminate\Contracts\View\View|string
-   */
   public function render() {
-    return view('components.alert');
+    return view("components.alert");
   }
 }
