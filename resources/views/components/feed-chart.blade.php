@@ -5,7 +5,7 @@
         </h2>
     </header>
     <article>
-        @if ($chart)
+        @if (isset($chart))
             {!! $chart->render() !!}
         @endif
     </article>
