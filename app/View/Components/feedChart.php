@@ -9,6 +9,7 @@ class feedChart extends Component {
 
   public function __construct($entries) {
     $totals = category_totals($entries);
+    if ($totals) {
     $this->chart = app()
       ->chartjs->name('pieChart')
       ->type('pie')
@@ -26,6 +27,7 @@ class feedChart extends Component {
         ],
       ])
       ->options([]);
+    }
   }
 
   public function render() {
