@@ -9,16 +9,20 @@
             <x-feed-month-controls :previousDate="$previous_date" :nextDate="$next_date"
                 :currentMonth="request()->month" :currentYear="request()->year" />
 
-            <div class="mb-3 grid grid-cols-1 gap-4 md:grid-cols-2">
-                {{-- entry chart --}}
-                <x-feed-chart :entries="$entries" />
+            @if (isset($entries) && !$entries->isEmpty())
+                <div class="mb-3 grid grid-cols-1 gap-4 md:grid-cols-2">
+                    {{-- entry chart --}}
+                    <x-feed-chart :entries="$entries" />
 
-                {{-- entry stats --}}
-                <x-entry-stats :entries="$entries" />
-            </div>
+                    {{-- entry stats --}}
+                    <x-entry-stats :entries="$entries" />
+                </div>
 
-            {{-- entry table --}}
-            <x-entry-table :entries="$entries" />
+                {{-- entry table --}}
+                <x-entry-table :entries="$entries" />
+            @else
+                <p>add your first entry for this period</p>
+            @endif
         </div>
     </section>
     <x-slot name="fab">
