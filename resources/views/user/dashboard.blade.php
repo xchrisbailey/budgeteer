@@ -21,7 +21,11 @@
                 {{-- entry table --}}
                 <x-entry-table :entries="$entries" />
             @else
-                <p>add your first entry for this period</p>
+                <section class="bg-white shadow mt-2 p-4 flex justify-center rounded">
+                    <h1 class="text-lg text-gray-900">No entries found for this period, <a
+                            href="{{ route('entry.create') }}"
+                            class="text-purple-700 underline hover:text-purple-500">please add some</a></h1>
+                </section>
             @endif
         </div>
     </section>
