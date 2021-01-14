@@ -45,7 +45,7 @@
     </div>
     {{ $scripts ?? null }}
     <script>
-        document.getElementById('alertBtn').addEventListener("click", (e) => {
+        document.getElementById('alertBtn')?.addEventListener("click", (e) => {
             e.preventDefault();
             document.getElementById('alertBox').classList.toggle("hidden");
         })
