@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class entryTable extends Component {
+class EntryTable extends Component {
   public $entries;
 
   public function __construct($entries) {

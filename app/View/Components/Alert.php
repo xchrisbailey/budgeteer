@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class alert extends Component {
+class Alert extends Component {
   public $kind;
   public $message;
 

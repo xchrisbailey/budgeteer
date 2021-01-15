@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class feedMonthControls extends Component {
+class FeedMonthControls extends Component {
   public $currentMonth;
   public $currentYear;
   public $nextDate;
