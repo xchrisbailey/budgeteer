@@ -12,7 +12,7 @@
             @if (isset($entries) && !$entries->isEmpty())
                 <div class="grid grid-cols-1 gap-4 mb-3 md:grid-cols-2">
                     {{-- entry chart --}}
-                    <x-feed-chart :entries="$entries" />
+                    <x-entry-chart :entries="$entries" />
 
                     {{-- entry stats --}}
                     <x-entry-stats :entries="$entries" />

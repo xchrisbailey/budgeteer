@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class entryStats extends Component {
+class EntryStats extends Component {
   public $totals;
 
   public function __construct($entries) {

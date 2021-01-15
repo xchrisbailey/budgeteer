@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class feedChart extends Component {
+class EntryChart extends Component {
   public $chart;
 
   public function __construct($entries) {
@@ -29,6 +29,6 @@ class feedChart extends Component {
   }
 
   public function render() {
-    return view("components.feed-chart");
+    return view("components.entry-chart");
   }
 }
