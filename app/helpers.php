@@ -30,7 +30,7 @@ if (!function_exists("category_totals")) {
 
 if (!function_exists("stat_bar_width")) {
   function stat_bar_width($amount, $total = 0) {
-    $percent = $total / $amount;
+    $percent = intval(($amount / $total) * 100);
     switch (true) {
       case $percent <= 16:
         return "w-1/6";
