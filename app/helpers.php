@@ -23,7 +23,11 @@ if (!function_exists("current_user")) {
 if (!function_exists("category_totals")) {
   function category_totals($entries) {
     return $entries->groupBy("category")->map(function ($item, $key) {
-      return $key = $item->sum("amount");
+      if ($key == "income") {
+        return null;
+      } else {
+        return $key = $item->sum("amount");
+      }
     }, []);
   }
 }
@@ -67,6 +71,25 @@ if (!function_exists("stat_bar_width")) {
         break;
       default:
         return "w-full";
+        break;
+    }
+  }
+}
+
+if (!function_exists("get_category_color")) {
+  function get_category_color($category) {
+    switch ($category) {
+      case "need":
+        return "yellow-400";
+        break;
+      case "want":
+        return "red-400";
+        break;
+      case "savings":
+        return "blue-400";
+        break;
+      default:
+        return "green-400";
         break;
     }
   }

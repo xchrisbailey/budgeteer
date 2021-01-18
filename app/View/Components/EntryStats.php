@@ -12,6 +12,6 @@ class EntryStats extends Component {
   }
 
   public function render() {
-    return view("components.entry-stats");
+    return view('components.entry-stats');
   }
 }

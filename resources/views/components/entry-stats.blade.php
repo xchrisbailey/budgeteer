@@ -8,27 +8,28 @@
         @if (isset($totals))
             @if ($totals->has('need'))
                 <div
-                    class="{{ stat_bar_width($totals['need'], $totals['income'] ?? 0) }} bg-yellow-400 flex justify-between px-3 py-1 rounded-full mb-2">
+                    class="{{ stat_bar_width($totals['need'], $totals['income'] ?? 0) }} bg-{{ get_category_color('need') }} flex justify-between px-3 py-1 rounded-full mb-2">
                     <p class="text-sm font-semibold uppercase">need</p>
                     <p class="text-sm uppercase">${{ cents_to_dollars($totals['need']) }}</p>
                 </div>
             @endif
             @if ($totals->has('savings'))
                 <div
-                    class="{{ stat_bar_width($totals['savings'], $totals['income'] ?? 0) }} : 'w-full' }} bg-blue-400 flex justify-between px-3 py-1 rounded-full mb-2">
+                    class="{{ stat_bar_width($totals['savings'], $totals['income'] ?? 0) }} : 'w-full' }} bg-{{ get_category_color('savings') }}  flex justify-between px-3 py-1 rounded-full mb-2">
                     <p class="text-sm font-semibold uppercase">savings</p>
                     <p class="text-sm uppercase">${{ cents_to_dollars($totals['savings']) }}</p>
                 </div>
             @endif
             @if ($totals->has('want'))
                 <div
-                    class="{{ stat_bar_width($totals['want'], $totals['income'] ?? 0) }} bg-red-400 flex justify-between px-3 py-1 rounded-full mb-2">
+                    class="{{ stat_bar_width($totals['want'], $totals['income'] ?? 0) }} bg-{{ get_category_color('want') }} flex justify-between px-3 py-1 rounded-full mb-2">
                     <p class="text-sm font-semibold uppercase">want</p>
                     <p class="text-sm uppercase">${{ cents_to_dollars($totals['want']) }}</p>
                 </div>
             @endif
             @if ($totals->has('income'))
-                <div class="flex items-center justify-between w-full px-3 py-1 mb-2 bg-green-400 rounded-full">
+                <div
+                    class="flex items-center justify-between w-full px-3 py-1 mb-2 bg-{{ get_category_color('income') }} rounded-full">
                     <p class="text-sm font-semibold uppercase">income</p>
                     <p class="text-sm uppercase">${{ cents_to_dollars($totals['income']) }}</p>
                 </div>

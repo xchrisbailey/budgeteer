@@ -23,7 +23,9 @@
                             <span class="text-red-800">${{ cents_to_dollars($entry->amount) }}</span>
                         @endif
                     </td>
-                    <td class="px-4 py-3 uppercase">{{ $entry->category }}</td>
+                    <td class="px-4 py-3 uppercase"><span
+                            class="rounded-full bg-{{ get_category_color($entry->category) }} px-2 py-1 text-xs">{{ $entry->category }}</span>
+                    </td>
                     <td class="flex flex-col justify-between px-4 py-3 md:flex-row md:justify-end">
                         <a href="{{ route('entry.edit', $entry->id) }}"
                             class="inline-flex p-2 mb-1 mr-2 transition duration-200 ease-in-out bg-yellow-300 rounded-full shadow md:mb-0 hover:bg-yellow-400">
