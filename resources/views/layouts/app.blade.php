@@ -42,9 +42,9 @@
                 {{ $slot }}
             </main>
 
-            {{ $fab ?? null }}
         </div>
     </div>
+    {{ $fab ?? null }}
     {{ $scripts ?? null }}
     <script>
         document.getElementById('alertBtn')?.addEventListener("click", (e) => {
