@@ -9,6 +9,7 @@ class EntryChart extends Component {
 
   public function __construct($entries) {
     $totals = category_totals($entries);
+    $totals->forget('income');
     $this->chart = app()
       ->chartjs->name('pieChart')
       ->type('pie')

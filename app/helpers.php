@@ -23,18 +23,14 @@ if (!function_exists("current_user")) {
 if (!function_exists("category_totals")) {
   function category_totals($entries) {
     return $entries->groupBy("category")->map(function ($item, $key) {
-      if ($key == "income") {
-        return null;
-      } else {
-        return $key = $item->sum("amount");
-      }
+      return $key = $item->sum("amount");
     }, []);
   }
 }
 
 if (!function_exists("stat_bar_width")) {
   function stat_bar_width($amount, $total = 0) {
-    $percent = intval(($amount / $total) * 100);
+    $percent = $total == 0 ? 0 : intval(($amount / $total) * 100);
     switch (true) {
       case $percent <= 16:
         return "w-1/6";
