@@ -1,8 +1,8 @@
 <section class="flex flex-col w-full h-full p-2 bg-white shadow md:rounded">
-    <article>
+    <article class="mb-6">
         <header>
-            <h2 class="px-2 mb-2 text-lg tracking-wider text-gray-900 uppercase font-weight-semibold">Spending By
-                Total Income this Period
+            <h2 class="px-2 mb-2 text-lg tracking-wider text-gray-900 uppercase font-weight-semibold"> Total Income this
+                Period
             </h2>
         </header>
         @if ($total_income > 0)

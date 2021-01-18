@@ -5,7 +5,7 @@
     </x-slot>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800"><span
-                class="text-purple-700">{{ current_user()->name }}</span>, add your expense or
+                class="text-purple-700">{{ current_user()->name }}</span>, add an expense or
             income</h2>
     </x-slot>
     <section class="mx-auto sm:px-6 lg:px-8">
